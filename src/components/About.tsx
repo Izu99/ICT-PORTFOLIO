@@ -51,12 +51,55 @@ export default function About() {
             </ul>
           </div>
           
-          <div>
-            <img 
-              src="/lovable-uploads/1f1f06c6-8844-456c-96f2-93879a7d0212.png" 
-              alt="About Bitfuzed" 
-              className="rounded-lg shadow-xl w-full"
-            />
+          {/* Advanced Glassmorphism Image Container */}
+          <div className="relative group cursor-pointer">
+            {/* Interactive Animated Background Dots */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute top-8 left-8 w-3 h-3 bg-primary/40 rounded-full animate-dotPulse dot-interactive cursor-pointer"></div>
+              <div className="absolute top-16 right-12 w-2 h-2 bg-accent/50 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "0.3s" }}></div>
+              <div className="absolute bottom-16 left-16 w-4 h-4 bg-primary/30 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "0.6s" }}></div>
+              <div className="absolute bottom-24 right-6 w-2.5 h-2.5 bg-accent/40 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "0.9s" }}></div>
+              <div className="absolute top-1/2 left-4 w-1.5 h-1.5 bg-primary/50 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "1.2s" }}></div>
+              <div className="absolute top-1/3 right-16 w-3.5 h-3.5 bg-accent/35 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "1.5s" }}></div>
+            </div>
+            
+            {/* Main Glassmorphism Frame */}
+            <div className="relative p-6 rounded-2xl backdrop-blur-xl bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/20 shadow-2xl transform hover:scale-105 hover:rotate-1 transition-all duration-700 overflow-hidden">
+              {/* Dynamic Background Gradients */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Animated Border Effect */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 animate-pulse"></div>
+                <div className="absolute inset-1 rounded-2xl bg-gradient-to-br from-background/80 to-background/60 backdrop-blur-xl"></div>
+              </div>
+              
+              {/* Image Container */}
+              <div className="relative overflow-hidden rounded-xl z-10">
+                <img 
+                  src="/lovable-uploads/1f1f06c6-8844-456c-96f2-93879a7d0212.png" 
+                  alt="Advanced ICT Learning Environment" 
+                  className="w-full transform transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                />
+                
+                {/* Overlay Effects */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              </div>
+              
+              {/* Floating Interactive Elements */}
+              <div className="absolute -top-3 -left-3 w-6 h-6 bg-primary/30 rounded-full animate-bounce hover:animate-spin cursor-pointer transition-all duration-300"></div>
+              <div className="absolute -top-3 -right-3 w-5 h-5 bg-accent/40 rounded-full animate-bounce hover:animate-ping cursor-pointer transition-all duration-300" style={{ animationDelay: "0.5s" }}></div>
+              <div className="absolute -bottom-3 -left-3 w-7 h-7 bg-primary/25 rounded-full animate-bounce hover:animate-pulse cursor-pointer transition-all duration-300" style={{ animationDelay: "1s" }}></div>
+              <div className="absolute -bottom-3 -right-3 w-4 h-4 bg-accent/35 rounded-full animate-bounce hover:animate-spin cursor-pointer transition-all duration-300" style={{ animationDelay: "1.5s" }}></div>
+            </div>
+            
+            {/* Additional Floating Dots Around Container */}
+            <div className="absolute -top-8 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-pulse hover:animate-bounce cursor-pointer transition-all duration-300"></div>
+            <div className="absolute -right-8 top-1/4 w-3 h-3 bg-accent/30 rounded-full animate-pulse hover:animate-spin cursor-pointer transition-all duration-300"></div>
+            <div className="absolute -bottom-8 right-1/3 w-2.5 h-2.5 bg-primary/35 rounded-full animate-pulse hover:animate-ping cursor-pointer transition-all duration-300"></div>
+            <div className="absolute -left-8 bottom-1/3 w-1.5 h-1.5 bg-accent/45 rounded-full animate-pulse hover:animate-bounce cursor-pointer transition-all duration-300"></div>
           </div>
         </div>
         
