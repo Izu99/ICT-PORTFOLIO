@@ -4,34 +4,34 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const services = [
   {
+    icon: <Database className="h-8 w-8 text-primary" />,
+    title: "Database Systems",
+    description: "Master database design, SQL queries, and data management. Learn to create efficient database structures and understand data relationships."
+  },
+  {
+    icon: <Globe className="h-8 w-8 text-primary" />,
+    title: "Web Technologies",
+    description: "Comprehensive coverage of HTML, CSS, JavaScript, and web development concepts. Build dynamic websites and understand client-server architecture."
+  },
+  {
     icon: <Code className="h-8 w-8 text-primary" />,
-    title: "Custom Software Development",
-    description: "Bespoke solutions crafted with precision and care. We transform complex requirements into elegant, intuitive software that drives your business forward."
+    title: "Programming Fundamentals",
+    description: "Learn programming logic, algorithms, and problem-solving techniques. Master programming languages and software development principles."
   },
   {
     icon: <Server className="h-8 w-8 text-primary" />,
-    title: "Web Application Development",
-    description: "Beautiful, responsive web experiences that work flawlessly across all devices. We combine cutting-edge technology with timeless design principles."
+    title: "Network Systems",
+    description: "Understand computer networks, internet protocols, and network security. Learn about LAN, WAN, and network troubleshooting techniques."
   },
   {
-    icon: <Smartphone className="h-8 w-8 text-primary" />,
-    title: "Mobile Development",
-    description: "Native and cross-platform mobile experiences with exceptional attention to detail. Every tap, swipe, and interaction is thoughtfully designed and implemented."
-  },
-  {
-    icon: <Gamepad className="h-8 w-8 text-primary" />,
-    title: "Game Development",
-    description: "Immersive gaming experiences built with modern engines and optimization techniques. We bring worlds to life through thoughtful gameplay mechanics and stunning visuals."
-  },
-  {
-    icon: <Cloud className="h-8 w-8 text-primary" />,
-    title: "Cloud Solutions",
-    description: "Scalable cloud architectures designed for performance and reliability. We leverage serverless computing and managed services to create efficient, cost-effective solutions."
+    icon: <Tablet className="h-8 w-8 text-primary" />,
+    title: "System Analysis",
+    description: "Study system design, analysis methodologies, and project management. Learn to analyze requirements and design efficient IT solutions."
   },
   {
     icon: <Shield className="h-8 w-8 text-primary" />,
-    title: "Security Services",
-    description: "Comprehensive protection for your digital assets. We implement robust security measures that safeguard your data while maintaining a seamless user experience."
+    title: "IT Security",
+    description: "Essential cybersecurity concepts, data protection, and ethical computing. Understand security threats and implement protection measures."
   }
 ];
 
@@ -46,12 +46,12 @@ export default function Services() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-sm uppercase tracking-wider text-primary font-semibold mb-2">Services</h2>
+          <h2 className="text-sm uppercase tracking-wider text-primary font-semibold mb-2">Learning Programs</h2>
           <h3 className="text-3xl md:text-4xl font-bold">
-            <span className="text-gradient">Thoughtfully Crafted</span> Solutions
+            A/L ICT <span className="text-gradient">Curriculum</span>
           </h3>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            We approach every project with care and precision, focusing on the details that make your product extraordinary
+            Comprehensive coverage of all A/L ICT topics with expert guidance and practical learning approaches
           </p>
         </div>
         

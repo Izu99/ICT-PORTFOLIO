@@ -15,23 +15,23 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 max-w-2xl animate-fadeIn" style={{ animationDelay: '0.2s' }}>
             <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium backdrop-blur-sm">
-              The Simplicity of Excellence
+              ICT WITH BHANUKA EKANAYAKA
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              <span className="text-gradient">Transform Your Ideas</span>
-              <br /> Into Reality
+              <span className="text-gradient">Master A/L ICT</span>
+              <br /> Online Learning
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We don't just build software — we craft digital experiences that elevate your vision. 
-              Our experts transform complex challenges into elegant solutions with world-class precision.
+              Join thousands of students who have excelled in A/L ICT with expert guidance. 
+              Learn from experienced teacher Bhanuka Ekanayaka and achieve your academic goals with comprehensive online lessons.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="group transition-all duration-300 hover:shadow-lg">
-                Discover the Possibilities
+                Start Learning Now
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline" className="transition-all duration-300 hover:bg-primary/5">
-                Explore Our Work
+                View Course Gallery
               </Button>
             </div>
           </div>

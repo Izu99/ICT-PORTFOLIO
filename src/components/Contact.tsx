@@ -35,10 +35,10 @@ export default function Contact() {
         <div className="text-center mb-16">
           <h2 className="text-sm uppercase tracking-wider text-primary font-semibold mb-2">Get in Touch</h2>
           <h3 className="text-3xl md:text-4xl font-bold">
-            Ready to <span className="text-gradient">Start</span> Your Project?
+            Ready to <span className="text-gradient">Excel</span> in A/L ICT?
           </h3>
           <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            Contact us today to discuss your software development needs and discover how we can help bring your vision to life
+            Contact us today to enroll in our A/L ICT program and start your journey toward academic excellence
           </p>
         </div>
         
@@ -50,8 +50,8 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-lg font-semibold mb-1">Email Us</h4>
-                <p className="text-gray-400">info@bitfuzed.com</p>
-                <p className="text-gray-400">support@bitfuzed.com</p>
+                <p className="text-gray-400">info@beict.lk</p>
+                <p className="text-gray-400">bhanuka@beict.lk</p>
               </div>
             </div>
             
@@ -61,8 +61,8 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-lg font-semibold mb-1">Call Us</h4>
-                <p className="text-gray-400">+1 (800) 123-4567</p>
-                <p className="text-gray-400">Mon-Fri: 9:00 AM - 6:00 PM EST</p>
+                <p className="text-gray-400">071 038 9004</p>
+                <p className="text-gray-400">Mon-Sat: 8:00 AM - 8:00 PM</p>
               </div>
             </div>
             
@@ -71,9 +71,9 @@ export default function Contact() {
                 <MapPin className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h4 className="text-lg font-semibold mb-1">Our Locations</h4>
-                <p className="text-gray-400">New York • San Francisco • London</p>
-                <p className="text-gray-400">Toronto • Berlin</p>
+                <h4 className="text-lg font-semibold mb-1">Location</h4>
+                <p className="text-gray-400">Sinhala Medium Classes</p>
+                <p className="text-gray-400">Online & In-Person Sessions</p>
               </div>
             </div>
           </div>
