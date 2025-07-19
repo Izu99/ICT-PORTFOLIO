@@ -57,9 +57,9 @@ export default function Hero() {
               {/* Teacher Image */}
               <div className="relative overflow-hidden rounded-2xl">
                 <img 
-                  src="https://beict.lk/wp-content/uploads/revslider/slider-1/Bhanuka-Sir-new-Photo.png" 
+                  src="https://portfolio-isuru.web.app/img.png" 
                   alt="Bhanuka Ekanayaka - A/L ICT Teacher" 
-                  className="w-full max-w-lg mx-auto transform transition-all duration-700 group-hover:scale-110"
+                  className="w-80 max-w-lg mx-auto transform transition-all duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
