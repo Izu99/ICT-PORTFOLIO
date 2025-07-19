@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon, Laptop } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -68,7 +67,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center">
-          <img src="/lovable-uploads/36c39fa1-92d5-4fc4-8615-c9fb3e8327a7.png" alt="Bitfuzed Logo" className="h-8 md:h-9" />
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/049/674/611/small_2x/a-blue-book-with-a-blank-page-png.png" alt="ICT Portfolio Logo" className="h-8 md:h-9" />
         </a>
         
         {/* Desktop Navigation */}

@@ -1,4 +1,3 @@
-
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -8,9 +7,11 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background pointer-events-none"></div>
       
       {/* Enhanced glow effects */}
-      <div className="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-      
+      <div className="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+      {/* <div className="absolute top-80 left-1/4 w-10 h-10 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div> */}
+     {/* <div className="absolute bottom-40right-1/4 w-8 h-80 bg-blue-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div> */}
+    
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 max-w-2xl animate-fadeIn" style={{ animationDelay: '0.2s' }}>
@@ -37,26 +38,26 @@ export default function Hero() {
           </div>
           
           {/* Enhanced Teacher Image with Advanced Effects */}
-          <div className="hidden lg:block relative animate-float overflow-hidden">
+          {/* <div className="hidden lg:block relative animate-float overflow-hidden"> */}
             {/* Interactive Animated Background Dots */}
             <div className="absolute inset-0">
-              <div className="absolute top-10 left-10 w-3 h-3 bg-primary/30 rounded-full animate-dotPulse dot-interactive cursor-pointer"></div>
+              {/* <div className="absolute top-10 left-10 w-3 h-3 bg-primary/30 rounded-full animate-dotPulse dot-interactive cursor-pointer"></div>
               <div className="absolute top-20 right-16 w-2 h-2 bg-accent/40 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "0.5s" }}></div>
               <div className="absolute bottom-20 left-20 w-4 h-4 bg-primary/20 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "1s" }}></div>
               <div className="absolute bottom-32 right-8 w-2.5 h-2.5 bg-accent/30 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "1.5s" }}></div>
               <div className="absolute top-1/2 left-8 w-1.5 h-1.5 bg-primary/40 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "2s" }}></div>
-              <div className="absolute top-1/3 right-20 w-3.5 h-3.5 bg-accent/25 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "2.5s" }}></div>
+              <div className="absolute top-1/3 right-20 w-3.5 h-3.5 bg-accent/25 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "2.5s" }}></div> */}
             </div>
             
             {/* Glassmorphism Container */}
-            <div className="relative p-8 rounded-3xl backdrop-blur-lg bg-white/10 border border-white/20 shadow-2xl transform hover:scale-105 hover:rotate-2 transition-all duration-700 group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-3xl"></div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-primary/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative p-8 rounded-3xl backdrop-blur-lg bg-white/0 border-0 border-white/20 shadow-2xl transform hover:scale-105 hover:rotate-2 transition-all duration-700 group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/4 via-transparent to-accent/10 rounded-3xl"></div>
+              {/* <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-primary/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div> */}
               
               {/* Teacher Image */}
               <div className="relative overflow-hidden rounded-2xl">
                 <img 
-                  src="/lovable-uploads/36c39fa1-92d5-4fc4-8615-c9fb3e8327a7.png" 
+                  src="https://beict.lk/wp-content/uploads/revslider/slider-1/Bhanuka-Sir-new-Photo.png" 
                   alt="Bhanuka Ekanayaka - A/L ICT Teacher" 
                   className="w-full max-w-lg mx-auto transform transition-all duration-700 group-hover:scale-110"
                 />
@@ -64,12 +65,12 @@ export default function Hero() {
               </div>
               
               {/* Floating Elements */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary/20 rounded-full animate-bounce"></div>
-              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-accent/30 rounded-full animate-bounce" style={{ animationDelay: "1s" }}></div>
+              {/* <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary/20 rounded-full animate-bounce"></div>
+              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-accent/30 rounded-full animate-bounce" style={{ animationDelay: "1s" }}></div> */}
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </section>
   );
 }

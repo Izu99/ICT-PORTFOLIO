@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -11,6 +10,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Trends from "@/components/Trends";
 import { useTheme } from "@/hooks/use-theme";
+import Gallery from "@/components/Gallery";
 
 const Index = () => {
   const { theme } = useTheme();
@@ -68,9 +68,10 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
-      <Services />
-      <Trends />
-      <Team />
+      <Gallery />
+      {/* <Services /> */}
+      {/* <Trends /> */}
+      {/* <Team /> */}
       <CTA />
       <Testimonials />
       <Contact />

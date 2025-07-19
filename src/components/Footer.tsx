@@ -1,4 +1,3 @@
-
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,7 +10,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="lg:col-span-1">
-            <img src="/lovable-uploads/36c39fa1-92d5-4fc4-8615-c9fb3e8327a7.png" alt="Bitfuzed Logo" className="h-8 mb-4" />
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/049/674/611/small_2x/a-blue-book-with-a-blank-page-png.png" alt="Bitfuzed Logo" className="h-8 mb-4" />
             <p className="text-gray-400 mb-4">
               Elevating businesses through innovative software solutions and expert development services.
             </p>
@@ -84,7 +83,7 @@ export default function Footer() {
         
         <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} Bitfuzed. All rights reserved.
+            © {currentYear} ICT Portfolio. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-gray-400 hover:text-primary transition-colors">Privacy Policy</a>
