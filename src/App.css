@@ -1,4 +1,4 @@
-
+/* Dark theme only, all light and system code removed */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -19,12 +19,8 @@
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -33,7 +29,6 @@
   }
 }
 
-/* Apple-inspired smooth theme transition */
 body, .card, a, button, section, div, h1, h2, h3, h4, p, span, svg {
   transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
               color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
@@ -44,73 +39,21 @@ body, .card, a, button, section, div, h1, h2, h3, h4, p, span, svg {
 }
 
 /* Dark mode specific styling */
-.dark .card {
+.card {
   background-color: rgba(30, 30, 30, 0.8);
   color: rgba(255, 255, 255, 0.87);
   backdrop-filter: blur(12px);
+  padding: 2em;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Refined light mode specific styling */
-.light .card {
-  background-color: rgba(252, 252, 252, 0.9);
-  color: rgba(22, 22, 22, 0.95);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(12px);
-}
-
-.light .bg-grid {
-  opacity: 0.2;
-}
-
-.light .text-gray-300,
-.light .text-gray-400,
-.light .text-muted-foreground {
-  color: rgba(50, 50, 60, 0.75);
-}
-
-.light .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(230, 230, 250, 0.5);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
-}
-
-.dark .glass-card {
+.glass-card {
   background: rgba(15, 15, 20, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.card {
-  padding: 2em;
-  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  border-radius: var(--radius);
-}
-
-/* Apple-inspired light mode improvements */
-.light {
-  --card-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
-  --hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-}
-
-.light .shadow-card {
-  box-shadow: var(--card-shadow);
-}
-
-.light .hover\:shadow-lg:hover {
-  box-shadow: var(--hover-shadow);
-}
-
-.light .border-border\/5 {
-  border-color: rgba(200, 200, 230, 0.1);
-}
-
-.light .border-border\/20 {
-  border-color: rgba(200, 200, 230, 0.2);
-}
-
-/* Refined typography */
 h1, h2, h3, h4, p, button {
   letter-spacing: -0.02em;
 }
@@ -122,82 +65,60 @@ h1, h2, h3, h4, p, button {
   background-clip: text;
 }
 
-/* Apple-inspired button styling */
 button {
   font-weight: 500;
 }
 
-/* Responsive design enhancements */
 @media (max-width: 768px) {
   #root {
     width: 100%;
     padding: 0;
   }
-  
   .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-
   .card {
     padding: 1.5em;
   }
-  
-  /* Improved mobile spacing */
   section {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  
-  /* Fix for overflow issues on mobile */
   body {
     overflow-x: hidden;
   }
-  
-  /* Better mobile typography */
   h1 {
     font-size: 2.25rem !important;
     line-height: 1.2 !important;
   }
-  
   h2 {
     font-size: 1.75rem !important;
   }
-  
   p {
     font-size: 1rem !important;
     line-height: 1.6 !important;
   }
 }
 
-/* Enhanced animation keyframes */
 @keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
 
 .animate-float {
   animation: float 6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
-/* Further mobile optimization for small devices */
 @media (max-width: 480px) {
   section {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-  
   .grid {
     gap: 1.25rem !important;
   }
-  
   .hidden-xs {
     display: none !important;
   }

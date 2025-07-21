@@ -130,14 +130,16 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </Button>
               
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="relative overflow-hidden border-purple-500/30 text-purple-300 hover:text-white transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 hover:border-purple-400/50 backdrop-blur-sm bg-slate-900/20"
+              <a href="#gallery"><Button
+                size="lg"
+                variant="outline"
+                className="relative overflow-hidden border-purple-500/30 text-purple-300 hover: transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 hover:border-purple-400/50 backdrop-blur-sm bg-slate-900/20"
+                 style={{ boxShadow: '0 4px 20px rgba(147, 51, 234, 0.2)' }}              
               >
-                <span className="relative z-10">View Course Gallery</span>
+               
+                <span className="relative z-10">View Gallery</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-              </Button>
+              </Button> </a>
             </div>
           </div>
           

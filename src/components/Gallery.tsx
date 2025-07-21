@@ -6,62 +6,62 @@ import { Video } from 'lucide-react';
 const galleryItems = [
 	{
 		type: 'image',
-		src: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg',
+		src: './gallery-img-1.jpeg',
 		alt: 'Student using computer',
 	},
 	{
 		type: 'video',
-		src: 'https://videos.pexels.com/video-files/3209298/3209298-uhd_2560_1440_25fps.mp4',
+		src: './gallery-vd-1.mp4',
 		alt: 'ICT class in action',
 	},
 	{
 		type: 'image',
-		src: 'https://images.pexels.com/photos/256401/pexels-photo-256401.jpeg',
+		src: './gallery-img-2.jpeg',
 		alt: 'Online learning',
 	},
 	{
 		type: 'video',
-		src: 'https://videos.pexels.com/video-files/855418/855418-hd_1920_1080_25fps.mp4',
+		src: './gallery-vd-2.mp4',
 		alt: 'Short ICT lesson',
 	},
 	{
 		type: 'image',
-		src: 'https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg',
+		src: './gallery-img-3.jpeg',
 		alt: 'Classroom teamwork',
 	},
 	{
 		type: 'image',
-		src: 'https://images.pexels.com/photos/414519/pexels-photo-414519.jpeg',
+		src: './gallery-img-4.jpeg',
 		alt: 'ICT teacher explaining',
 	},
 	{
 		type: 'video',
-		src: 'https://videos.pexels.com/video-files/1596891/1596891-hd_1920_1080_30fps.mp4',
+		src: './gallery-vd-3.mp4',
 		alt: 'Students collaborating',
 	},
 	{
 		type: 'image',
-		src: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg',
+		src: './gallery-img-5.jpeg',
 		alt: 'Group study',
 	},
 	{
 		type: 'video',
-		src: 'https://videos.pexels.com/video-files/17489505/17489505-hd_1920_1080_50fps.mp4',
+		src: './gallery-vd-4.mp4',
 		alt: 'ICT project presentation',
 	},
 	{
 		type: 'image',
-		src: 'https://images.pexels.com/photos/256402/pexels-photo-256402.jpeg',
+		src: './gallery-img-6.jpeg',
 		alt: 'Exam preparation',
 	},
 	{
 		type: 'image',
-		src: 'https://images.pexels.com/photos/1181358/pexels-photo-1181358.jpeg',
+		src: './gallery-img-7.jpeg',
 		alt: 'Online quiz',
 	},
 	{
 		type: 'video',
-		src: 'https://videos.pexels.com/video-files/9198107/9198107-hd_1920_1080_25fps.mp4',
+		src: './gallery-vd-5.mp4',
 		alt: 'Classroom Q&A',
 	},
 ];
@@ -84,7 +84,7 @@ export default function Gallery() {
 			<div className="container mx-auto px-4 relative z-10">
 				<div className="text-center mb-12">
 					<h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4">
-						Course Gallery
+						Gallery
 					</h2>
 					<p className="text-lg text-muted-foreground">
 						Explore real moments from our A/L ICT classes and online sessions.
