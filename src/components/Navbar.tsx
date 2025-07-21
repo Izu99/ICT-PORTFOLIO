@@ -25,6 +25,17 @@ export default function Navbar() {
   const isMobile = useIsMobile();
   const { theme, setTheme } = useTheme();
   
+  // CORRECT WhatsApp number format - Replace with your actual number
+  const whatsappNumber = "94771234567"; // Sri Lankan number format: 94 + mobile number without leading 0
+  const whatsappMessage = "Hi! I'm interested in your A/L ICT online classes. Can you provide more information?";
+  
+  // Function to handle WhatsApp click
+  const handleWhatsAppClick = () => {
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -60,13 +71,17 @@ export default function Navbar() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'backdrop-blur-md shadow-md' 
+        ? 'backdrop-blur-md bg-background/80 shadow-md border-b border-border/20' 
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center">
-          <img src="https://static.vecteezy.com/system/resources/thumbnails/049/674/611/small_2x/a-blue-book-with-a-blank-page-png.png" alt="ICT Portfolio Logo" className="h-8 md:h-9" />
+        <a href="#" className="flex items-center group">
+          <img 
+            src="https://static.vecteezy.com/system/resources/thumbnails/049/674/611/small_2x/a-blue-book-with-a-blank-page-png.png" 
+            alt="ICT Portfolio Logo" 
+            className="h-8 md:h-9 transition-transform duration-300 group-hover:scale-110" 
+          />
         </a>
         
         {/* Desktop Navigation */}
@@ -75,9 +90,10 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-foreground/80 hover:text-primary transition-colors font-medium text-sm"
+              className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium text-sm relative group"
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </nav>
@@ -86,48 +102,62 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full">
-                {theme === 'light' && <Sun className="h-[1.2rem] w-[1.2rem]" />}
-                {theme === 'dark' && <Moon className="h-[1.2rem] w-[1.2rem]" />}
-                {theme === 'system' && <Laptop className="h-[1.2rem] w-[1.2rem]" />}
+              <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full hover:bg-primary/10 transition-all duration-300">
+                {theme === 'light' && <Sun className="h-[1.2rem] w-[1.2rem] transition-transform duration-300 hover:rotate-12" />}
+                {theme === 'dark' && <Moon className="h-[1.2rem] w-[1.2rem] transition-transform duration-300 hover:rotate-12" />}
+                {theme === 'system' && <Laptop className="h-[1.2rem] w-[1.2rem] transition-transform duration-300 hover:scale-110" />}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => setTheme("light")}>
+            <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuItem onClick={() => setTheme("light")} className="cursor-pointer">
                 <Sun className="mr-2 h-4 w-4" />
                 <span>Light</span>
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("dark")}>
+              <DropdownMenuItem onClick={() => setTheme("dark")} className="cursor-pointer">
                 <Moon className="mr-2 h-4 w-4" />
                 <span>Dark</span>
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("system")}>
+              <DropdownMenuItem onClick={() => setTheme("system")} className="cursor-pointer">
                 <Laptop className="mr-2 h-4 w-4" />
                 <span>System</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button className="flex" size="sm">
+          
+          <Button className="transition-all duration-300 hover:scale-105" size="sm">
             Get in Touch
           </Button>
-          <a href="https://wa.me/94711098530" target="_blank" rel="noopener noreferrer">
-            <Button className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg shadow-md transition-all" size="sm">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.657.404 3.237 1.174 4.646L2 22l5.354-1.174A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.522 0-3.004-.366-4.312-1.062l-.307-.162-3.176.697.677-3.099-.162-.307A7.963 7.963 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.297-5.021c-.237-.119-1.398-.691-1.615-.77-.217-.079-.375-.119-.532.119-.158.237-.609.77-.747.928-.138.158-.276.178-.513.059-.237-.119-.999-.368-1.903-1.174-.703-.627-1.179-1.402-1.318-1.639-.138-.237-.015-.365.104-.484.107-.106.237-.276.355-.414.119-.138.158-.237.237-.395.079-.158.04-.296-.02-.414-.059-.119-.532-1.287-.729-1.762-.192-.462-.388-.399-.532-.406l-.453-.009c-.158 0-.414.059-.631.276-.217.217-.827.808-.827 1.969 0 1.161.846 2.285.963 2.444.119.158 1.666 2.547 4.037 3.463.565.194 1.005.31 1.35.397.567.144 1.084.124 1.492.075.455-.055 1.398-.571 1.597-1.123.198-.552.198-1.025.139-1.123-.059-.099-.217-.158-.454-.277z"/></svg>
-              WhatsApp
-            </Button>
-          </a>
+          
+          {/* CORRECTED WhatsApp Button */}
+          <Button 
+            onClick={handleWhatsAppClick}
+            className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg" 
+            size="sm"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
+            </svg>
+            WhatsApp
+          </Button>
         </div>
         
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
-          <a href="https://wa.me/94YOURNUMBER" target="_blank" rel="noopener noreferrer">
-            <Button className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg shadow-md transition-all" size="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.657.404 3.237 1.174 4.646L2 22l5.354-1.174A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.522 0-3.004-.366-4.312-1.062l-.307-.162-3.176.697.677-3.099-.162-.307A7.963 7.963 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.297-5.021c-.237-.119-1.398-.691-1.615-.77-.217-.079-.375-.119-.532.119-.158.237-.609.77-.747.928-.138.158-.276.178-.513.059-.237-.119-.999-.368-1.903-1.174-.703-.627-1.179-1.402-1.318-1.639-.138-.237-.015-.365.104-.484.107-.106.237-.276.355-.414.119-.138.158-.237.237-.395.079-.158.04-.296-.02-.414-.059-.119-.532-1.287-.729-1.762-.192-.462-.388-.399-.532-.406l-.453-.009c-.158 0-.414.059-.631.276-.217.217-.827.808-.827 1.969 0 1.161.846 2.285.963 2.444.119.158 1.666 2.547 4.037 3.463.565.194 1.005.31 1.35.397.567.144 1.084.124 1.492.075.455-.055 1.398-.571 1.597-1.123.198-.552.198-1.025.139-1.123-.059-.099-.217-.158-.454-.277z"/></svg>
-            </Button>
-          </a>
+          
+          {/* Mobile WhatsApp Button - CORRECTED */}
+          <Button 
+            onClick={handleWhatsAppClick}
+            className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg shadow-md transition-all duration-300 hover:scale-105" 
+            size="icon"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
+            </svg>
+          </Button>
+          
           <button
-            className="text-foreground/80 hover:text-foreground"
+            className="text-foreground/80 hover:text-foreground transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -145,7 +175,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-foreground/80 hover:text-primary py-2 text-lg font-medium border-b border-border/30 transition-colors"
+                  className="text-foreground/80 hover:text-primary py-2 text-lg font-medium border-b border-border/30 transition-all duration-300 hover:translate-x-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
@@ -159,7 +189,7 @@ export default function Navbar() {
                       variant={theme === 'light' ? 'default' : 'outline'} 
                       size="sm" 
                       onClick={() => setTheme('light')}
-                      className="w-16"
+                      className="w-16 transition-all duration-300"
                     >
                       Light
                     </Button>
@@ -167,14 +197,26 @@ export default function Navbar() {
                       variant={theme === 'dark' ? 'default' : 'outline'} 
                       size="sm" 
                       onClick={() => setTheme('dark')}
-                      className="w-16"
+                      className="w-16 transition-all duration-300"
                     >
                       Dark
                     </Button>
                   </div>
                 </div>
-                <Button className="mt-3 w-full" size="lg">
+                <Button className="mt-3 w-full transition-all duration-300 hover:scale-105" size="lg">
                   Get in Touch
+                </Button>
+                
+                {/* Mobile WhatsApp Button in Menu */}
+                <Button 
+                  onClick={handleWhatsAppClick}
+                  className="w-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105"
+                  size="lg"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
+                  </svg>
+                  Contact via WhatsApp
                 </Button>
               </div>
             </nav>

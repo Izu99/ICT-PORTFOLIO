@@ -1,76 +1,283 @@
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth) * 100,
+        y: (e.clientY / window.innerHeight) * 100,
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
-    <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-grid">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/80 to-accent/10 pointer-events-none"></div>
-      
-      {/* Enhanced glow effects */}
-      <div className="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-      {/* <div className="absolute top-80 left-1/4 w-10 h-10 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div> */}
-     {/* <div className="absolute bottom-40right-1/4 w-8 h-80 bg-blue-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div> */}
-    
+    <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-gradient-to-b from-primary/10 via-background/80 to-accent/10">
+      {/* Dynamic Background with Mouse Interaction */}
+      <div
+        className="absolute inset-0 opacity-30 transition-all duration-1000 ease-out"
+        style={{
+          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(147, 51, 234, 0.15) 0%, transparent 50%)`,
+        }}
+      />
+
+      {/* Enhanced Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,black_70%,transparent_110%)]" />
+
+      {/* Floating Orbs with Advanced Animation */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full mix-blend-screen filter blur-xl opacity-70 animate-float"
+            style={{
+              width: `${Math.random() * 300 + 100}px`,
+              height: `${Math.random() * 300 + 100}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              background: `linear-gradient(45deg, ${
+                i % 2 === 0
+                  ? "rgba(147, 51, 234, 0.1)"
+                  : "rgba(59, 130, 246, 0.1)"
+              }, transparent)`,
+              animationDelay: `${i * 0.5}s`,
+              animationDuration: `${15 + i * 2}s`,
+            }}
+          />
+        ))}
+      </div>
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 max-w-2xl animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-            <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium backdrop-blur-sm animate-bounce animate-duration-1000 animate-ease-in-out animate-infinite">
-            ICT WITH PRABATH WICKRAMASINGHE
+          {/* Content Section */}
+          <div
+            className={`space-y-8 max-w-2xl transition-all duration-1500 ease-out ${
+              isLoaded
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+          >
+            {/* Animated Badge */}
+            <div className="relative inline-block group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+              <div className="relative px-6 py-3 bg-slate-900/50 backdrop-blur-sm rounded-full border border-purple-500/20 text-purple-300 text-sm font-medium tracking-wide">
+                <span className="relative z-10 flex items-center gap-2">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                  ICT WITH PRABATH WICKRAMASINGHE
+                  <div
+                    className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"
+                    style={{ animationDelay: "0.5s" }}
+                  ></div>
+                </span>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              <span className="text-gradient">Master A/L ICT</span>
-              <br /> Online Learning
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Join thousands of students who have excelled in A/L ICT with expert guidance. 
-              Learn from experienced teacher Prabath Wickramasinghe and achieve your academic goals with comprehensive online lessons.
+
+            {/* Main Heading with Staggered Animation */}
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+                <div
+                  className={`transition-all duration-1000 ease-out ${
+                    isLoaded
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-20 opacity-0"
+                  }`}
+                  style={{ animationDelay: "0.2s" }}
+                >
+                  <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x bg-300% relative">
+                    Unlock Your Potential in A/L ICT
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent blur-sm opacity-50 animate-gradient-x bg-300%">
+                      Unlock Your Potential in A/L ICT
+                    </div>
+                  </span>
+                </div>
+                <div
+                  className={`text-white transition-all duration-1000 ease-out ${
+                    isLoaded
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-20 opacity-0"
+                  }`}
+                  style={{ animationDelay: "0.4s" }}
+                >
+                  Online Learning
+                </div>
+              </h1>
+            </div>
+
+            {/* Description with Typewriter Effect */}
+            <p
+              className={`text-xl text-slate-300 leading-relaxed transition-all duration-1000 ease-out ${
+                isLoaded
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-20 opacity-0"
+              }`}
+              style={{ animationDelay: "0.6s" }}
+            >
+              Join thousands of students who have excelled in A/L ICT with
+              expert guidance. Learn from experienced teacher{" "}
+              <span className="text-purple-400 font-semibold">
+                Prabath Wickramasinghe
+              </span>{" "}
+              and achieve your academic goals with comprehensive online lessons.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="group transition-all duration-300 hover:shadow-lg">
-                Start Learning Now
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+
+            {/* Enhanced Buttons */}
+            <div
+              className={`flex flex-col sm:flex-row gap-4 pt-6 transition-all duration-1000 ease-out ${
+                isLoaded
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-20 opacity-0"
+              }`}
+              style={{ animationDelay: "0.8s" }}
+            >
+              <Button
+                size="lg"
+                className="group relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
+              >
+                <span className="relative z-10 flex items-center">
+                  Start Learning Now
+                  <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </Button>
-              <Button size="lg" variant="outline" className="transition-all duration-300 hover:bg-primary/5">
-                View Course Gallery
+
+              <Button
+                size="lg"
+                variant="outline"
+                className="relative overflow-hidden border-purple-500/30 text-purple-300 hover:text-white transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 hover:border-purple-400/50 backdrop-blur-sm bg-slate-900/20"
+              >
+                <span className="relative z-10">View Course Gallery</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
               </Button>
             </div>
           </div>
-          
-          {/* Enhanced Teacher Image with Advanced Effects */}
-          {/* <div className="hidden lg:block relative animate-float overflow-hidden"> */}
-            {/* Interactive Animated Background Dots */}
-            <div className="absolute inset-0">
-              {/* <div className="absolute top-10 left-10 w-3 h-3 bg-primary/30 rounded-full animate-dotPulse dot-interactive cursor-pointer"></div>
-              <div className="absolute top-20 right-16 w-2 h-2 bg-accent/40 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "0.5s" }}></div>
-              <div className="absolute bottom-20 left-20 w-4 h-4 bg-primary/20 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "1s" }}></div>
-              <div className="absolute bottom-32 right-8 w-2.5 h-2.5 bg-accent/30 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "1.5s" }}></div>
-              <div className="absolute top-1/2 left-8 w-1.5 h-1.5 bg-primary/40 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "2s" }}></div>
-              <div className="absolute top-1/3 right-20 w-3.5 h-3.5 bg-accent/25 rounded-full animate-dotPulse dot-interactive cursor-pointer" style={{ animationDelay: "2.5s" }}></div> */}
+
+          {/* Enhanced Image Section */}
+          <div
+            className={`hidden lg:block relative transition-all duration-1500 ease-out ${
+              isLoaded
+                ? "translate-x-0 opacity-100"
+                : "translate-x-20 opacity-0"
+            }`}
+            style={{ animationDelay: "0.4s" }}
+          >
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 animate-spin-slow">
+              <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-accent/10 to-transparent rounded-full blur-3xl"></div>
             </div>
-            
-            {/* Glassmorphism Container */}
-            <div className="relative p-8 rounded-3xl backdrop-blur-lg bg-white/0 border-0 border-white/20 shadow-2xl transform hover:scale-105 hover:rotate-2 transition-all duration-700 group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/4 via-transparent to-accent/10 rounded-3xl"></div>
-              {/* <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-primary/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div> */}
-              
-              {/* Teacher Image */}
-              <div className="relative overflow-hidden rounded-2xl">
-                <img 
-                  src="./hero-img.png" 
-                  alt="Prabath Wickramasinghe - A/L ICT Teacher" 
-                  className="w-full max-w-lg mx-auto transform transition-all duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {/* Main Image Container */}
+            <div className="relative group">
+              {/* Glow Effect */}
+              {/* <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-tilt"></div> */}
+              {/* Glass Container - removed bg-white/5 and border for cleaner look */}
+              <div className="relative p-8 rounded-3xl backdrop-blur-xl shadow-2xl transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-1">
+                {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl"></div> */}
+                {/* Image */}
+                <div className="relative overflow-hidden rounded-2xl">
+                  <img
+                    src="./hero-img.png"
+                    alt="Prabath Wickramasinghe - A/L ICT Teacher"
+                    className="w-full max-w-lg mx-auto transform transition-all duration-700 group-hover:scale-110 filter group-hover:brightness-110"
+                  />
+                  {/* Image Overlay Effects */}
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div> */}
+                </div>
+                {/* Floating Particles */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {[...Array(8)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-1 h-1 bg-primary rounded-full opacity-60 animate-float"
+                      style={{
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                        animationDelay: `${i * 0.3}s`,
+                        animationDuration: `${3 + Math.random() * 2}s`,
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
-              
-              {/* Floating Elements */}
-              {/* <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary/20 rounded-full animate-bounce"></div>
-              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-accent/30 rounded-full animate-bounce" style={{ animationDelay: "1s" }}></div> */}
             </div>
+            {/* Decorative Elements */}
+            <div className="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
+            <div
+              className="absolute bottom-10 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "1s" }}
+            ></div>
+            {/* <div className="absolute top-80 left-1/4 w-10 h-10 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div> */}
+            {/* <div className="absolute bottom-40right-1/4 w-8 h-80 bg-blue-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div> */}
           </div>
         </div>
-      {/* </div> */}
+      </div>
+
+      {/* Custom Styles */}
+      <style jsx>{`
+        @keyframes gradient-x {
+          0%,
+          100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(180deg);
+          }
+        }
+        @keyframes tilt {
+          0%,
+          50%,
+          100% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(1deg);
+          }
+          75% {
+            transform: rotate(-1deg);
+          }
+        }
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        .animate-gradient-x {
+          animation: gradient-x 3s ease infinite;
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        .animate-tilt {
+          animation: tilt 10s infinite linear;
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+        .bg-300% {
+          background-size: 300% 300%;
+        }
+      `}</style>
     </section>
   );
 }
