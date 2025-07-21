@@ -11,7 +11,7 @@ export default function CTA() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium backdrop-blur-sm mb-4">
-            A/L ICT with Bhanuka Ekanayaka
+            A/L ICT with Prabath Wickramasinghe
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gradient">
             Unlock Your Potential in A/L ICT

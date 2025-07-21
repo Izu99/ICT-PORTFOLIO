@@ -1,4 +1,4 @@
-import { Check } from 'lucide-react';
+import { Check, Mail, Phone, GraduationCap } from 'lucide-react';
 
 interface StatProps {
   value: string;
@@ -19,7 +19,7 @@ export default function About() {
   return (
     <section id="about" className="py-20 bg-background relative overflow-hidden">
       {/* Enhanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-600/5 to-background pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/80 to-accent/10 pointer-events-none"></div>
       <div className="absolute top-20 left-1/5 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
       
@@ -36,7 +36,7 @@ export default function About() {
           {/* Content */}
           <div className="space-y-6">
             <p className="text-lg text-gray-300 leading-relaxed">
-              Bhanuka Ekanayaka is an experienced A/L ICT teacher with years of expertise in 
+              Prabath Wickramasinghe is an experienced A/L ICT teacher with years of expertise in 
               Information and Communication Technology education, helping students achieve excellence in their studies.
             </p>
             
@@ -71,10 +71,6 @@ export default function About() {
             
             {/* Main Glassmorphism Container */}
             <div className="relative p-8 rounded-3xl backdrop-blur-xl bg-gradient-to-br from-white/0 via-white/0 to-transparent border-0 border-white/20 shadow-2xl transform hover:scale-105 hover:rotate-1 transition-all duration-700 overflow-hidden">
-              {/* Background Layers */}
-              {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-accent/8 rounded-3xl animate-pulse"></div>
-              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-primary/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div> */}
-              
               {/* Animated Border */}
               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/40 via-accent/40 to-primary/40 animate-pulse"></div>
@@ -104,21 +100,12 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              
-              {/* Corner Decorations */}
-              {/* <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-primary/40 to-accent/40 rounded-full animate-bounce backdrop-blur-sm border border-white/20"></div>
-              <div className="absolute -top-4 -right-4 w-6 h-6 bg-gradient-to-br from-accent/50 to-primary/50 rounded-full animate-bounce backdrop-blur-sm border border-white/25" style={{ animationDelay: "0.5s" }}></div>
-              <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-br from-primary/35 to-accent/35 rounded-full animate-bounce backdrop-blur-sm border border-white/15" style={{ animationDelay: "1s" }}></div>
-              <div className="absolute -bottom-4 -right-4 w-5 h-5 bg-gradient-to-br from-accent/45 to-primary/45 rounded-full animate-bounce backdrop-blur-sm border border-white/30" style={{ animationDelay: "1.5s" }}></div> */}
             </div>
-            
-            {/* Orbital Elements */}
-            {/* <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gradient-to-br from-primary/40 to-accent/40 rounded-full animate-spin backdrop-blur-sm border border-white/20"></div>
-            <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-gradient-to-br from-accent/50 to-primary/50 rounded-full animate-spin backdrop-blur-sm border border-white/25" style={{ animationDelay: "0.7s" }}></div>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-5 h-5 bg-gradient-to-br from-primary/35 to-accent/35 rounded-full animate-spin backdrop-blur-sm border border-white/15" style={{ animationDelay: "1.4s" }}></div>
-            <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-gradient-to-br from-accent/45 to-primary/45 rounded-full animate-spin backdrop-blur-sm border border-white/30" style={{ animationDelay: "2.1s" }}></div> */}
           </div>
         </div>
+        {/* Professional Bottom Decoration */}
+        {/* Removed dot animation and extra lines for a cleaner look */}
+        {/* No bottom decoration */}
         
         {/* Enhanced Stats */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">

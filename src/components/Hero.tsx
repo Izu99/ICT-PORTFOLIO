@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 export default function Hero() {
   return (
     <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-grid">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/80 to-accent/10 pointer-events-none"></div>
       
       {/* Enhanced glow effects */}
       <div className="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
@@ -15,8 +15,8 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 max-w-2xl animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-            <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium backdrop-blur-sm">
-              ICT WITH BHANUKA EKANAYAKA
+            <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium backdrop-blur-sm animate-bounce animate-duration-1000 animate-ease-in-out animate-infinite">
+            ICT WITH PRABATH WICKRAMASINGHE
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               <span className="text-gradient">Master A/L ICT</span>
@@ -24,7 +24,7 @@ export default function Hero() {
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Join thousands of students who have excelled in A/L ICT with expert guidance. 
-              Learn from experienced teacher Bhanuka Ekanayaka and achieve your academic goals with comprehensive online lessons.
+              Learn from experienced teacher Prabath Wickramasinghe and achieve your academic goals with comprehensive online lessons.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="group transition-all duration-300 hover:shadow-lg">
@@ -57,9 +57,9 @@ export default function Hero() {
               {/* Teacher Image */}
               <div className="relative overflow-hidden rounded-2xl">
                 <img 
-                  src="https://portfolio-isuru.web.app/img.png" 
-                  alt="Bhanuka Ekanayaka - A/L ICT Teacher" 
-                  className="w-80 max-w-lg mx-auto transform transition-all duration-700 group-hover:scale-110"
+                  src="./hero-img.png" 
+                  alt="Prabath Wickramasinghe - A/L ICT Teacher" 
+                  className="w-full max-w-lg mx-auto transform transition-all duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
