@@ -80,7 +80,7 @@ export default function Contact() {
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-300 uppercase tracking-wider">Mobile</p>
-                  <p className="text-base text-orange-300 font-semibold group-hover:text-orange-200 transition-colors duration-300 leading-tight">071 693 53 42</p>
+                  <p className="text-base text-orange-300 font-semibold group-hover:text-orange-200 transition-colors duration-300 leading-tight">072 693 53 42</p>
                 </div>
               </div>
             </div>
@@ -95,14 +95,14 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-300 uppercase tracking-wider">WhatsApp (Alternative)</p>
+                  <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-300 uppercase tracking-wider">WhatsApp</p>
                   <a
-                    href="https://wa.me/94787110000"
+                    href="https://wa.me/940716935342"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base text-green-300 font-semibold group-hover:text-green-200 transition-colors duration-300 leading-tight flex items-center gap-2"
                   >
-                    078 711 0000
+                    071 693 53 42
                   </a>
                 </div>
               </div>
