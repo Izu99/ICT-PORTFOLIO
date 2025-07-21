@@ -26,7 +26,7 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
   
   // CORRECT WhatsApp number format - Replace with your actual number
-  const whatsappNumber = "94787110000"; // Sri Lankan number format: 94 + mobile number without leading 0
+  const whatsappNumber = "94716935342"; // Sri Lankan number format: 94 + mobile number without leading 0
   const whatsappMessage = "Hi Sir! I'm interested in your A/L ICT online classes. Can you provide more information?";
   
   // Function to handle WhatsApp click
