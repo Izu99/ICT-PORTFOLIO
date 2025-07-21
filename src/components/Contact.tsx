@@ -46,10 +46,10 @@ export default function Contact() {
           {/* Personal Details Cards - Two Rows, Smaller, Balanced Height */}
           <div className="grid grid-cols-2 grid-rows-2 gap-6 flex-1 max-w-lg h-full">
             {/* Education Card */}
-            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl backdrop-blur-sm bg-gradient-to-br from-blue-500/10 via-blue-500/5 to-transparent border border-blue-500/20 hover:border-blue-400/40 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-blue-500/20 min-w-[140px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl border border-blue-500/40 hover:border-blue-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-blue-500/20 min-w-[140px] bg-transparent">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
               <div className="relative flex flex-col items-center text-center space-y-3">
-                <div className="p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-400/30 group-hover:from-blue-400/30 group-hover:to-blue-300/40 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-blue-500/30">
+                <div className="p-4 rounded-xl border border-blue-500/30 group-hover:border-blue-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-blue-500/30 bg-transparent">
                   <GraduationCap className="h-7 w-7 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
                 </div>
                 <div className="space-y-1">
@@ -57,13 +57,12 @@ export default function Contact() {
                   <p className="text-base text-blue-300 font-semibold group-hover:text-blue-200 transition-colors duration-300 leading-tight">BIT(Hons) University of Lincoln</p>
                 </div>
               </div>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
             {/* Email Card */}
-            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl backdrop-blur-sm bg-gradient-to-br from-purple-500/10 via-purple-500/5 to-transparent border border-purple-500/20 hover:border-purple-400/40 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-purple-500/20 min-w-[140px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-purple-500/0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" style={{ animationDelay: "100ms" }}></div>
+            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl border border-purple-500/40 hover:border-purple-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-purple-500/20 min-w-[140px] bg-transparent">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/20 to-purple-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
               <div className="relative flex flex-col items-center text-center space-y-3">
-                <div className="p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-400/30 group-hover:from-purple-400/30 group-hover:to-purple-300/40 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-purple-500/30">
+                <div className="p-4 rounded-xl border border-purple-500/30 group-hover:border-purple-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-purple-500/30 bg-transparent">
                   <Mail className="h-7 w-7 text-purple-400 group-hover:text-purple-300 transition-colors duration-300" />
                 </div>
                 <div className="space-y-1">
@@ -71,13 +70,12 @@ export default function Contact() {
                   <p className="text-base text-purple-300 font-semibold group-hover:text-purple-200 transition-colors duration-300 leading-tight break-all">Prabath.hanshaka@gmail.com</p>
                 </div>
               </div>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
             {/* Phone 1 Card */}
-            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl backdrop-blur-sm bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-emerald-500/20 min-w-[140px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/10 to-emerald-500/0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" style={{ animationDelay: "200ms" }}></div>
+            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl border border-emerald-500/40 hover:border-emerald-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-emerald-500/20 min-w-[140px] bg-transparent">
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/20 to-emerald-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
               <div className="relative flex flex-col items-center text-center space-y-3">
-                <div className="p-4 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-400/30 group-hover:from-emerald-400/30 group-hover:to-emerald-300/40 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-emerald-500/30">
+                <div className="p-4 rounded-xl border border-emerald-500/30 group-hover:border-emerald-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-emerald-500/30 bg-transparent">
                   <Phone className="h-7 w-7 text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300" />
                 </div>
                 <div className="space-y-1">
@@ -85,13 +83,12 @@ export default function Contact() {
                   <p className="text-base text-emerald-300 font-semibold group-hover:text-emerald-200 transition-colors duration-300 leading-tight">071 693 53 42</p>
                 </div>
               </div>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
             {/* Phone 2 Card */}
-            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl backdrop-blur-sm bg-gradient-to-br from-orange-500/10 via-orange-500/5 to-transparent border border-orange-500/20 hover:border-orange-400/40 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-orange-500/20 min-w-[140px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" style={{ animationDelay: "300ms" }}></div>
+            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl border border-orange-500/40 hover:border-orange-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-orange-500/20 min-w-[140px] bg-transparent">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/20 to-orange-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
               <div className="relative flex flex-col items-center text-center space-y-3">
-                <div className="p-4 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-400/30 group-hover:from-orange-400/30 group-hover:to-orange-300/40 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-orange-500/30">
+                <div className="p-4 rounded-xl border border-orange-500/30 group-hover:border-orange-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-orange-500/30 bg-transparent">
                   <Phone className="h-7 w-7 text-orange-400 group-hover:text-orange-300 transition-colors duration-300" />
                 </div>
                 <div className="space-y-1">
@@ -99,7 +96,6 @@ export default function Contact() {
                   <p className="text-base text-orange-300 font-semibold group-hover:text-orange-200 transition-colors duration-300 leading-tight">072 693 53 42</p>
                 </div>
               </div>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           </div>
           {/* Contact Form - Responsive, Larger, Centered, Balanced Height */}
