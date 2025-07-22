@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, MapPin, Phone, GraduationCap } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -19,11 +20,21 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to your backend
-    // For now, just show a success message
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', company: '', message: '' });
+
+    const serviceId = 'service_pinglpm';
+    const templateId = 'template_9qehsbw';
+    const publicKey = 'PGKYNGsjteHCyeASh';
+
+    emailjs.send(serviceId, templateId, formData, publicKey)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Thank you for your message! We will get back to you soon.');
+        setFormData({ name: '', email: '', company: '', message: '' });
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+        alert('Failed to send message. Please try again later.');
+      });
   };
 
   return (
