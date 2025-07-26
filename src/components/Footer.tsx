@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <>
       <Helmet>
-        <title>Footer | Prabath Wickramasinghe ICT Portfolio</title>
+        <title>Prabath Wickramasinghe</title>
         <meta name="description" content="Footer section for Prabath Wickramasinghe's A/L ICT portfolio." />
         <meta property="og:title" content="Footer | Prabath Wickramasinghe ICT Portfolio" />
         <meta property="og:description" content="Footer section for Prabath Wickramasinghe's A/L ICT portfolio." />
