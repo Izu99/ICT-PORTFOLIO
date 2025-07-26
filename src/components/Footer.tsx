@@ -2,11 +2,21 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Mail, Phone } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
+    <>
+      <Helmet>
+        <title>Footer | Prabath Wickramasinghe ICT Portfolio</title>
+        <meta name="description" content="Footer section for Prabath Wickramasinghe's A/L ICT portfolio." />
+        <meta property="og:title" content="Footer | Prabath Wickramasinghe ICT Portfolio" />
+        <meta property="og:description" content="Footer section for Prabath Wickramasinghe's A/L ICT portfolio." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://yourdomain.com/" />
+      </Helmet>
     <footer className="bg-background/90 backdrop-blur border-t border-border/20 py-8 px-4 mt-16">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Left: Logo & Copyright */}
@@ -35,5 +45,6 @@ export default function Footer() {
         </div> */}
       </div>
     </footer>
+    </>
   );
 }

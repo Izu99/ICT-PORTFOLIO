@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, MapPin, Phone, GraduationCap } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { Helmet } from "react-helmet";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,7 +13,7 @@ export default function Contact() {
     company: '',
     message: ''
   });
-
+ 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -38,6 +39,15 @@ export default function Contact() {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Contact | Prabath Wickramasinghe ICT Portfolio</title>
+        <meta name="description" content="Contact Prabath Wickramasinghe for A/L ICT online lessons and guidance." />
+        <meta property="og:title" content="Contact | Prabath Wickramasinghe ICT Portfolio" />
+        <meta property="og:description" content="Contact Prabath Wickramasinghe for A/L ICT online lessons and guidance." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://yourdomain.com/contact" />
+      </Helmet>
     <section id="contact" className="py-20 bg-background relative">
       <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-background to-transparent pointer-events-none"></div>
       
@@ -177,5 +187,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </>
   );
 }

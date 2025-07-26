@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
+import { Helmet } from "react-helmet";
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -21,6 +22,20 @@ export default function Hero() {
   }, []);
 
   return (
+    <>
+      <Helmet>
+        <title>Unlock Your Potential in A/L ICT | Prabath Wickramasinghe</title>
+        <meta name="description" content="Join thousands of students who have excelled in A/L ICT with expert guidance from Prabath Wickramasinghe. Achieve your academic goals with comprehensive online lessons." />
+        <meta property="og:title" content="Unlock Your Potential in A/L ICT" />
+        <meta property="og:description" content="Expert A/L ICT online learning with Prabath Wickramasinghe." />
+        <meta property="og:image" content="/hero-img.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Unlock Your Potential in A/L ICT" />
+        <meta name="twitter:description" content="Expert A/L ICT online learning with Prabath Wickramasinghe." />
+        <meta name="twitter:image" content="/hero-img.png" />
+        <link rel="canonical" href="https://yourdomain.com/" />
+      </Helmet>
     <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-gradient-to-b from-primary/10 via-background/80 to-accent/10">
       {/* Dynamic Background with Mouse Interaction */}
       <div 
@@ -162,7 +177,7 @@ export default function Hero() {
             {/* Main Image Container */}
             <div className="relative group w-72 h-72 md:w-[32rem] md:h-auto flex items-center justify-center">
               <img 
-                src="./hero-img.png" 
+                src="./hero-img.png"               
                 alt="Prabath Wickramasinghe - A/L ICT Teacher" 
                 className="w-full h-full object-cover rounded-2xl shadow-xl transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
               />
@@ -212,5 +227,6 @@ export default function Hero() {
         .bg-300% { background-size: 300% 300%; }
       `}</style>
     </section>
+    </>
   );
 }

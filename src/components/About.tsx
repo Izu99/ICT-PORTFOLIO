@@ -1,4 +1,5 @@
 import { Check, Monitor, Code, Database, Wifi, Cpu, Globe, Shield } from 'lucide-react';
+import { Helmet } from "react-helmet";
 
 interface StatProps {
   value: string;
@@ -17,7 +18,16 @@ function Stat({ value, description }: StatProps) {
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-background relative overflow-hidden">
+    <>
+      <Helmet>
+        <title>About | Prabath Wickramasinghe ICT Portfolio</title>
+        <meta name="description" content="Learn more about Prabath Wickramasinghe, an expert in A/L ICT education, and his teaching philosophy." />
+        <meta property="og:title" content="About | Prabath Wickramasinghe ICT Portfolio" />
+        <meta property="og:description" content="Learn more about Prabath Wickramasinghe, an expert in A/L ICT education." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://yourdomain.com/about" />
+      </Helmet>
+      <section id="about" className="py-20 bg-background relative overflow-hidden" aria-label="About Section">
       {/* Enhanced Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/80 to-accent/10 pointer-events-none"></div>
       <div className="absolute top-20 left-1/5 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
@@ -300,5 +310,6 @@ export default function About() {
         </div>
       </div>
     </section>
+    </>
   );
 } 
