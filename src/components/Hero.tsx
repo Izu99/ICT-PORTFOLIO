@@ -88,8 +88,8 @@ export default function Hero() {
                     <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent blur-sm opacity-50 animate-gradient-x bg-300%">
                       Unlock Your Potential in A/L ICT
                     </div>
-                  </span>
-                </div>
+                  </span> 
+                </div>   
                 <div 
                   className={`text-white transition-all duration-1000 ease-out ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
