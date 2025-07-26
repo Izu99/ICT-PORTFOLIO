@@ -130,16 +130,20 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </Button>
               
-              <a href="#gallery"><Button
-                size="lg"
-                variant="outline"
-                className="relative overflow-hidden border-purple-500/30 text-purple-300 hover: transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 hover:border-purple-400/50 backdrop-blur-sm bg-slate-900/20"
-                 style={{ boxShadow: '0 4px 20px rgba(147, 51, 234, 0.2)' }}              
-              >
-               
-                <span className="relative z-10">View Gallery</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-              </Button> </a>
+              <a href="#gallery" className="group w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full group relative overflow-hidden border-purple-500/30 text-purple-300 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/50 backdrop-blur-sm bg-slate-900/20"
+                  style={{ boxShadow: '0 4px 20px rgba(147, 51, 234, 0.2)' }}
+                >
+                  <span className="relative z-10 flex items-center">
+                    View Gallery
+                    <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </Button>
+              </a>
             </div>
           </div>
           
@@ -156,7 +160,7 @@ export default function Hero() {
               <div className="absolute bottom-0 right-0 w-32 h-32 md:w-96 md:h-96 bg-gradient-to-tl from-accent/10 to-transparent rounded-full blur-3xl"></div>
             </div>
             {/* Main Image Container */}
-            <div className="relative group w-48 h-48 md:w-[28rem] md:h-auto flex items-center justify-center">
+            <div className="relative group w-72 h-72 md:w-[32rem] md:h-auto flex items-center justify-center">
               <img 
                 src="./hero-img.png" 
                 alt="Prabath Wickramasinghe - A/L ICT Teacher" 

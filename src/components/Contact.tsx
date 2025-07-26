@@ -55,9 +55,9 @@ export default function Contact() {
         {/* Personal Details and Contact Form - One Responsive Row, Balanced Height */}
         <div className="flex flex-col lg:flex-row gap-8 mb-12 w-full justify-center items-stretch">
           {/* Personal Details Cards - Two Rows, Smaller, Balanced Height */}
-          <div className="grid grid-cols-2 grid-rows-2 gap-6 flex-1 max-w-lg h-full">
+          <div className="grid grid-cols-2 grid-rows-2 gap-6 flex-1 max-w-lg h-full mx-auto justify-items-center">
             {/* Education Card */}
-            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl border border-cyan-500/40 hover:border-cyan-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-cyan-500/20 min-w-[140px] bg-transparent">
+            <div className="flex flex-col justify-center h-full w-full min-h-[180px] group relative p-4 rounded-xl border border-cyan-500/40 hover:border-cyan-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-cyan-500/20 min-w-[140px] bg-transparent">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/20 to-cyan-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
               <div className="relative flex flex-col items-center text-center space-y-3">
                 <div className="p-4 rounded-xl border border-cyan-500/30 group-hover:border-cyan-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-cyan-500/30 bg-transparent">
@@ -70,7 +70,7 @@ export default function Contact() {
               </div>
             </div>
             {/* Email Card */}
-            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl border border-purple-500/40 hover:border-purple-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-purple-500/20 min-w-[140px] bg-transparent">
+            <div className="flex flex-col justify-center h-full w-full min-h-[180px] group relative p-4 rounded-xl border border-purple-500/40 hover:border-purple-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-purple-500/20 min-w-[140px] bg-transparent">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/20 to-purple-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
               <div className="relative flex flex-col items-center text-center space-y-3">
                 <div className="p-4 rounded-xl border border-purple-500/30 group-hover:border-purple-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-purple-500/30 bg-transparent">
@@ -83,7 +83,7 @@ export default function Contact() {
               </div>
             </div>
             {/* Phone 1 Card - Mobile (Brown/orange style) */}
-            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl border border-orange-700/40 hover:border-orange-600/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-orange-700/20 min-w-[140px] bg-transparent">
+            <div className="flex flex-col justify-center h-full w-full min-h-[180px] group relative p-4 rounded-xl border border-orange-700/40 hover:border-orange-600/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-orange-700/20 min-w-[140px] bg-transparent">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-700/0 via-orange-700/20 to-orange-700/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
               <div className="relative flex flex-col items-center text-center space-y-3">
                 <div className="p-4 rounded-xl border border-orange-700/30 group-hover:border-orange-600/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-orange-700/30 bg-transparent">
@@ -96,7 +96,7 @@ export default function Contact() {
               </div>
             </div>
             {/* Phone 2 Card - WhatsApp Alternative */}
-            <div className="flex flex-col justify-center h-full group relative p-4 rounded-xl border border-green-500/40 hover:border-green-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-green-500/20 min-w-[140px] bg-transparent">
+            <div className="flex flex-col justify-center h-full w-full min-h-[180px] group relative p-4 rounded-xl border border-green-500/40 hover:border-green-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-green-500/20 min-w-[140px] bg-transparent">
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/0 via-green-500/20 to-green-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
               <div className="relative flex flex-col items-center text-center space-y-3">
                 <div className="p-4 rounded-xl border border-green-500/30 group-hover:border-green-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-green-500/30 bg-transparent">
