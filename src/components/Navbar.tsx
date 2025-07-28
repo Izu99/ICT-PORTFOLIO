@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'; 
 import { Menu, X, Bell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -261,7 +261,7 @@ export default function Navbar() {
       </div>
     </div>
   );
-})()}
+})()} 
     </>
   );
 }
