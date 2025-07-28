@@ -23,9 +23,9 @@ const notificationData = [
   {
     id: 1,
     imageSrc: './bill.jpg',
-    alt: 'New class schedule',
-    title: 'New Class Schedule!',
-    description: 'A new revision class has been added for the upcoming exams. Check the class locations for more details.'
+    // alt: 'New class schedule',
+    // title: 'New Class Schedule!',
+    // description: 'A new revision class has been added for the upcoming exams. Check the class locations for more details.'
   }
 ];
 
