@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, MapPin, Phone, GraduationCap } from 'lucide-react';
+import { Mail, MapPin, Phone, GraduationCap, Facebook } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { Helmet } from "react-helmet";
 
@@ -66,20 +66,7 @@ export default function Contact() {
         <div className="flex flex-col lg:flex-row gap-8 mb-12 w-full justify-center items-stretch">
           {/* Personal Details Cards - Two Rows, Smaller, Balanced Height */}
           <div className="grid grid-cols-2 grid-rows-2 gap-6 flex-1 max-w-lg h-full mx-auto justify-items-center">
-            {/* Education Card */}
-            <div className="flex flex-col justify-center h-full w-full min-h-[180px] group relative p-4 rounded-xl border border-cyan-500/40 hover:border-cyan-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-cyan-500/20 min-w-[140px] bg-transparent">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/20 to-cyan-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
-              <div className="relative flex flex-col items-center text-center space-y-3">
-                <div className="p-4 rounded-xl border border-cyan-500/30 group-hover:border-cyan-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-cyan-500/30 bg-transparent">
-                  <GraduationCap className="h-7 w-7 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300" />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-300 uppercase tracking-wider">Qualification</p>
-                  <p className="text-base text-cyan-300 font-semibold group-hover:text-cyan-200 transition-colors duration-300 leading-tight">BIT(Hons) University of Lincoln</p>
-                </div>
-              </div>
-            </div>
-            {/* Email Card */}
+                       {/* Email Card */}
             <div className="flex flex-col justify-center h-full w-full min-h-[180px] group relative p-4 rounded-xl border border-purple-500/40 hover:border-purple-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-purple-500/20 min-w-[140px] bg-transparent">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/20 to-purple-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
               <div className="relative flex flex-col items-center text-center space-y-3">
@@ -128,6 +115,26 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+             {/* Facebook Card */}
+             <a
+      href="https://www.facebook.com/ICTwithPrabath?mibextid=ZbWKwL"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col justify-center h-full w-full min-h-[180px] group relative p-4 rounded-xl border border-cyan-500/40 hover:border-cyan-400/80 transition-all duration-700 cursor-pointer overflow-hidden hover:shadow-xl hover:shadow-cyan-500/20 min-w-[140px] bg-transparent"
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/20 to-cyan-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none"></div>
+      <div className="relative flex flex-col items-center text-center space-y-3">
+        <div className="p-4 rounded-xl border border-cyan-500/30 group-hover:border-cyan-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-cyan-500/30 bg-transparent">
+          <Facebook className="h-7 w-7 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300" />
+        </div>
+        <div className="space-y-1">
+          <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-300 uppercase tracking-wider">Facebook</p>
+          <p className="text-base text-cyan-300 font-semibold group-hover:text-cyan-200 transition-colors duration-300 leading-tight">
+            ICTwithPrabath
+          </p>
+        </div>
+      </div>
+    </a>
           </div>
           {/* Contact Form - Responsive, Larger, Centered, Balanced Height */}
           <div className="flex-2 w-full max-w-full lg:min-w-[600px] lg:max-w-2xl flex items-center justify-center">

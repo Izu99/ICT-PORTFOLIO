@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
-import Team from "@/components/Team";
 import CTA from "@/components/CTA";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Trends from "@/components/Trends";
 import { useTheme } from "@/hooks/use-theme";
 import Gallery from "@/components/Gallery";
+import Qualifications from "@/components/Qualifications";
+import ClassLocations from "@/components/ClassLocations";
 
 const Index = () => {
   const { theme } = useTheme();
@@ -22,22 +21,7 @@ const Index = () => {
   }, []);
 
   // Apply theme class to body (helps with full-screen styling)
-  useEffect(() => {
-    if (!mounted) return;
-    
-    document.body.classList.remove("light", "dark");
-    
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-      document.body.classList.add(systemTheme);
-    } else {
-      document.body.classList.add(theme);
-    }
-  }, [theme, mounted]);
 
-  // Handle scroll animations
   useEffect(() => {
     if (!mounted) return;
     
@@ -65,15 +49,18 @@ const Index = () => {
 
   return (
     <div className={`min-h-screen bg-background text-foreground transition-colors duration-500 ${theme}`}>
+      
       <Navbar />
       <Hero />
       <About />
-      <Gallery />
+      <Qualifications />
       {/* <Services /> */}
-      {/* <Trends /> */}
-      {/* <Team /> */}
-      <CTA />
+            {/* <Trends /> */}
+            {/* <Team /> */}
+      <ClassLocations />
+      <Gallery />
       <Testimonials />
+      <CTA />
       <Contact />
       <Footer />
     </div>
