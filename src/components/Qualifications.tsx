@@ -29,11 +29,8 @@ export default function Qualifications() {
   ];
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden" aria-label="Qualifications Section">
+    <section className="py-20 bg-gradient-to-b from-primary/10 via-background/80 to-accent/10 relative overflow-hidden" aria-label="Qualifications Section">
       {/* Enhanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-background/90 to-primary/5 pointer-events-none"></div>
-      <div className="absolute top-32 right-1/4 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 left-1/5 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }}></div>
       
       {/* Floating Academic Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -61,19 +58,19 @@ export default function Qualifications() {
         {/* Academic Timeline Style */}
         <div className="relative max-w-4xl mx-auto">
           {/* Central Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-accent to-primary rounded-full opacity-30"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-accent to-primary rounded-full opacity-30 hidden md:block"></div>
           
           {/* Central Timeline Orb */}
-          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-full border-4 border-background shadow-xl animate-pulse"></div>
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-full border-4 border-background shadow-xl animate-pulse hidden md:block"></div>
 
           <div className="space-y-16">
             {qualifications.map((qual, index) => (
               <div 
                 key={index} 
-                className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} group`}
+                className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} group`}
               >
                 {/* Qualification Card */}
-                <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
                   <div className="relative p-8 rounded-3xl backdrop-blur-xl bg-gradient-to-br from-white/5 via-white/2 to-transparent border border-white/10 hover:border-white/20 transition-all duration-700 group-hover:scale-105 overflow-hidden">
                     {/* Dynamic Background Pattern */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${qual.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
@@ -89,7 +86,7 @@ export default function Qualifications() {
                       </div>
 
                       {/* Content */}
-                      <div className="text-center">
+                      <div className="text-left md:text-center">
                         <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${qual.bgGradient} border border-white/10 text-gray-300 mb-3 group-hover:scale-105 transition-transform duration-300`}>
                           {qual.type}
                         </span>
@@ -116,7 +113,7 @@ export default function Qualifications() {
                 </div>
 
                 {/* Timeline Node */}
-                <div className="w-2/12 flex justify-center">
+                <div className="w-full md:w-2/12 flex justify-center py-4 md:py-0">
                   <div className="relative">
                     {/* Pulsing Orb */}
                     <div className={`w-6 h-6 bg-gradient-to-br ${qual.gradient} rounded-full border-4 border-background shadow-xl group-hover:scale-150 transition-transform duration-500`}></div>
@@ -125,12 +122,12 @@ export default function Qualifications() {
                     <div className={`absolute inset-0 w-6 h-6 bg-gradient-to-br ${qual.gradient} rounded-full animate-ping opacity-0 group-hover:opacity-75`}></div>
                     
                     {/* Connection Lines */}
-                    <div className={`absolute top-1/2 ${index % 2 === 0 ? 'left-full' : 'right-full'} w-8 h-0.5 bg-gradient-to-r ${qual.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
+                    <div className={`absolute top-1/2 ${index % 2 === 0 ? 'left-full' : 'right-full'} w-8 h-0.5 bg-gradient-to-r ${qual.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden md:block`}></div>
                   </div>
                 </div>
 
                 {/* Spacer for alternating layout */}
-                <div className="w-5/12"></div>
+                <div className="w-full md:w-5/12"></div>
               </div>
             ))}
           </div>
