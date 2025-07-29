@@ -44,7 +44,7 @@ export default function ClassLocations() {
     classes: [
       {
         name: 'A/L ICT',
-        date: 'Every Sunday',
+        date: 'Every Saturday',
         time: '11:00 AM - 1:00 PM',
         students: '18 Students',
         level: 'A/L ICT',
