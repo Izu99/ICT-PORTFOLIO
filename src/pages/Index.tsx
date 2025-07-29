@@ -52,16 +52,28 @@ const Index = () => {
       
       <Navbar />
       <Hero />
-      <About />
-      <Qualifications />
+      <div id="about">
+        <About />
+      </div>
+      <div id="qualifications">
+        <Qualifications />
+      </div>
       {/* <Services /> */}
             {/* <Trends /> */}
             {/* <Team /> */}
-      <ClassLocations />
-      <Gallery />
-      <Testimonials />
+      <div id="class-locations">
+        <ClassLocations />
+      </div>
+      <div id="gallery">
+        <Gallery />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
       <CTA />
-      <Contact />
+      <div id="contact">
+        <Contact />
+      </div>
       <Footer />
     </div>
   );

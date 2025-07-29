@@ -11,8 +11,9 @@ import { useTheme } from '@/hooks/use-theme';
 
 const navLinks = [
   { name: 'Home', href: '#' },
-  { name: 'Qualifications', href: '#qualifications' },
   { name: 'About', href: '#about' },
+  { name: 'Qualifications', href: '#qualifications' },
+  { name: 'Class Locations', href: '#class-locations' },
   { name: 'Gallery', href: '#gallery' },
   { name: 'Testimonials', href: '#testimonials' },
   { name: 'Contact', href: '#contact' }
@@ -22,17 +23,50 @@ const navLinks = [
 const notificationData = [
   {
     id: 1,
-    imageSrc: './bill.jpg',
-    // alt: 'New class schedule',
-    // title: 'New Class Schedule!',
-    // description: 'A new revision class has been added for the upcoming exams. Check the class locations for more details.'
-  }
+    // imageSrc: './bill.jpg',
+    alt: 'New class schedule',
+    title: 'Time Table',
+    description: 'Siyora-Delgoda',
+    timetable: {
+      '2025': [
+        {
+          title: 'Paper & Revision',
+          day: 'Sunday',
+          time: '10.30a.m - 6.30p.m',
+        },
+        {
+          title: 'Theory',
+          day: 'Saturday',
+          time: '1.30p.m - 5.30p.m',
+        },
+        {
+          title: 'Online paper class',
+          day: 'Friday',
+          time: '9.00p.m - 11.00p.m',
+        },
+      ],
+      '2026': [
+        {
+          title: 'Theory',
+          day: 'Saturday',
+          time: '8.00a.m - 10.30a.m',
+        },
+      ],
+      '2027': [
+        {
+          title: 'Theory',
+          day: 'Saturday',
+          time: '11.00a.m - 1.00p.m',
+        },
+      ],
+    },
+  },
 ];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const [isNotificationOpen, setIsNotificationOpen] = useState(true);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const isMobile = useIsMobile();
   const { theme, setTheme } = useTheme();
@@ -83,6 +117,7 @@ export default function Navbar() {
   // Handle closing animation for notification popup
   const handleCloseNotification = () => {
     if (isAnimatingOut) return; // Prevent double-triggering
+    localStorage.setItem('hasSeenNotification', 'true');
     setIsAnimatingOut(true);
     // Duration should match the animation duration.
     setTimeout(() => {
@@ -240,22 +275,50 @@ export default function Navbar() {
           ${isAnimatingOut ? 'animate-out fade-out-95 zoom-out-95 slide-out-to-bottom-4 sm:slide-out-to-bottom-0' : ''}`}
         onClick={(e) => e.stopPropagation()}
       >
-        {data.imageSrc && (
+        {/* {data.imageSrc && (
           <img 
             src={data.imageSrc}
             alt={data.alt || 'Notification image'}
             className="w-full max-h-96 sm:max-h-[80vh] object-contain rounded-lg"
           />
-        )}
+        )} */}
 
-        {(data.title || data.description) && (
+        {(data.title || data.description || data.timetable) && (
           <div className="mt-4 text-center">
-            {data.title && <h4 className="text-lg font-semibold">{data.title}</h4>}
+            {data.title && <h4 className="text-2xl font-bold text-primary mb-2">{data.title}</h4>}
             {data.description && (
-              <p className="text-muted-foreground text-sm">
+              <p className="text-lg text-muted-foreground mb-4">
                 {data.description}
               </p>
             )}
+            {data.timetable && (
+              <div className="text-left">
+                {Object.entries(data.timetable).map(([year, classes]) => (
+                  <div key={year} className="mb-4">
+                    <h5 className="text-xl font-semibold text-foreground mb-2">{year}</h5>
+                    <ul className="space-y-2">
+                      {classes.map((classInfo, index) => (
+                        <li key={index} className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-muted p-3 rounded-lg">
+                          <span className="font-medium text-foreground">{classInfo.title}</span>
+                          <span className="text-sm text-muted-foreground mt-1 sm:mt-0">{classInfo.day} {classInfo.time}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}   
+            <Button 
+              onClick={handleWhatsAppClick}
+              className="mt-4 w-full flex items-center justify-center gap-2 border border-green-500/40 hover:border-green-400/80 bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent relative px-4 py-2 rounded-xl shadow-md transition-all duration-300 hover:scale-105 hover:shadow-green-500/20 overflow-hidden group focus:outline-none focus:ring-0"
+              size="lg"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-green-500/0 via-green-500/20 to-green-500/0 transform -translate-x-full group-hover:translate-x-0 group-hover:animate-[slide-right_1s_ease-in-out_forwards] transition-transform duration-1000 pointer-events-none rounded-xl"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" className="relative z-10 text-green-400 group-hover:text-green-300 transition-colors duration-300">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
+              </svg>
+              <span className="relative z-10">Contact on WhatsApp</span>
+            </Button>
           </div>
         )}
       </div>
