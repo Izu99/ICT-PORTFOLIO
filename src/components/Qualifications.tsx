@@ -18,8 +18,8 @@ export default function Qualifications() {
       gradient: "from-purple-600 to-pink-500",
       bgGradient: "from-purple-600/10 to-pink-500/10"
     },
-    {
-      title: "Government National School Teacher",
+    { 
+      title: "Government National School Teacher", 
       type: "Professional Status",
       description: "Certified Government National School Teacher with official teaching credentials",
       icon: School,
