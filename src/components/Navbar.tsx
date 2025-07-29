@@ -327,7 +327,7 @@ export default function Navbar() {
               ${isAnimatingOut ? 'animate-out fade-out-95 zoom-out-95 slide-out-to-bottom-4 sm:slide-out-to-bottom-0' : ''}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-y-auto max-h-[80vh] md:overflow-y-hidden md:max-h-full">
               {notificationData.sort((a, b) => a.id === 2 ? -1 : 1).map((data) => (
                 <div key={data.id}>
                   {(data.description || data.timetable) && (
