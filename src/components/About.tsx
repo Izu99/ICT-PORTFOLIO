@@ -1,4 +1,4 @@
-import { Check, Monitor, Code, Database, Wifi, Cpu, Globe, Shield } from 'lucide-react';
+import { Check, Monitor, Code, Database, Wifi, Cpu, Globe, Shield } from 'lucide-react'; 
 import { Helmet } from "react-helmet";
 
 interface StatProps {
