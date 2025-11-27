@@ -134,16 +134,18 @@ export default function Hero() {
               }`}
               style={{ animationDelay: '0.8s' }}
             >
-              <Button 
-                size="lg" 
-                className="group relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
-              >
+              <a href="https://ezyict.lk" target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto">
+                <Button 
+                  size="lg" 
+                  className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 w-full"
+                >
                 <span className="relative z-10 flex items-center">
                   Start Learning Now
                   <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </Button>
+            </a>
               
               <a href="#gallery" className="group w-full sm:w-auto">
                 <Button
